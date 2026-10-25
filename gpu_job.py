@@ -15,4 +15,7 @@ def run_gpu_job(job_name):
 
 
 if __name__ == "__main__":
-    run_gpu_job("Inference Job")
+    try:
+        run_gpu_job("Inference Job")
+    except RuntimeError as e:
+        print(f"Error: {e}")
